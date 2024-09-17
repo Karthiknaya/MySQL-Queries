@@ -1,0 +1,6 @@
+select u.name name, sum(t.amount) balance 
+from Transactions as t
+left join Users as u
+on t.account = u.account
+group by u.name
+having sum(t.amount) >10000
