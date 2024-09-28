@@ -1,0 +1,4 @@
+Select Department.name as Department, Employee.name as Employee , Employee.salary as Salary
+from Department 
+Left Join Employee  on departmentid = Department.id
+where Salary = ( select max(salary) from Employee where  departmentId =  Department.id)
